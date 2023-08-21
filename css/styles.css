@@ -1,0 +1,1139 @@
+@charset "UTF-8";
+.linear_orange {
+  background: linear-gradient(to right, #FEA308 0%, #FF8200 100%);
+}
+
+.linear_blue {
+  background: linear-gradient(to right, #00C1D3 0%, #04A6B5 100%);
+}
+
+/* CSS reset  ------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u,
+i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+  vertical-align: baseline;
+  font: inherit;
+  font-family: Arial, Microsoft JhengHei;
+  font-size: 100%;
+  font-size: 16px;
+  font-weight: initial;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  line-height: 1.42857143;
+  letter-spacing: normal;
+  border: 0;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol, ul {
+  outline: none;
+}
+
+input, select, button, textarea {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Arial, Microsoft JhengHei;
+  white-space: normal;
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+  padding: 0;
+}
+input[type=search], select[type=search], button[type=search], textarea[type=search] {
+  -webkit-appearance: textfield;
+}
+input::-ms-clear, select::-ms-clear, button::-ms-clear, textarea::-ms-clear {
+  display: none;
+}
+input::-ms-reveal, select::-ms-reveal, button::-ms-reveal, textarea::-ms-reveal {
+  display: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+input[type=date] {
+  -moz-appearance: textfield;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-search-decoration {
+  display: none;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: Arial, Microsoft JhengHei;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+@media (max-width: 414px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: #2B1700;
+  padding: 0 40px;
+}
+header::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: url("../image/line.png") no-repeat top left/cover;
+}
+header img {
+  width: 54px;
+  height: 54px;
+}
+header button {
+  opacity: 1;
+  cursor: pointer;
+  display: none;
+  padding: 1.5rem 1rem 1rem;
+  transition: opacity 0.5s;
+}
+header button span {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 3px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  margin: 8px 0;
+  transition: all 0.5s;
+}
+header button.open span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0.7rem;
+}
+header button.open span:nth-of-type(2) {
+  width: 0;
+}
+header button.open span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  bottom: 0.7rem;
+}
+header button:hover {
+  opacity: 0.5;
+}
+header ul {
+  display: flex;
+  list-style-type: none;
+}
+header ul li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  position: relative;
+  z-index: 1;
+  color: #FFFFFF;
+  padding: 1.5rem;
+}
+header ul li::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(to top, #2B1700 0%, #573C18 100%);
+  transition: height 0.3s;
+}
+header ul li:hover, header ul li.focus {
+  font-weight: bold;
+}
+header ul li:hover::after, header ul li.focus::after {
+  height: 85px;
+}
+
+main {
+  min-height: calc(100vh - 90px);
+  margin-top: 90px;
+}
+main.bgBrown {
+  background: linear-gradient(to bottom, #8B6C45 50%, #2B1700 100%);
+}
+main .banner {
+  position: relative;
+}
+main .banner > img {
+  width: 100vw;
+}
+main .banner > div {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 30%;
+  right: 4rem;
+}
+main .banner > div img {
+  position: relative;
+  width: 33%;
+  z-index: 1;
+}
+main .banner > div::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  bottom: -2rem;
+  top: -1.5rem;
+  right: -2rem;
+  background: linear-gradient(to bottom, rgba(43, 23, 0, 0.5) 0%, rgba(43, 23, 0, 0) 100%);
+}
+main .content {
+  padding: 3rem;
+}
+main .content h2 {
+  font-size: 1.875rem;
+  margin-bottom: 2rem;
+}
+main .content.about > div {
+  max-width: 700px;
+  margin: 0 auto;
+}
+main .content.about > div h2 {
+  color: #80734E;
+}
+main .content.about > div .luckyList .item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+main .content.about > div .luckyList .item h3 {
+  position: relative;
+  width: 4rem;
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  color: #2B1700;
+  background: #FFFFFF;
+  margin-right: 2rem;
+  padding: 8px 0;
+}
+main .content.about > div .luckyList .item h3 span {
+  display: block;
+  text-align: center;
+  font-size: 1.5625rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  color: #2B1700;
+}
+main .content.about > div .luckyList .item p {
+  width: calc(100% - 6rem);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #7F7366;
+  padding: 8px 0;
+}
+main .content.about > div .luckyList .item ul {
+  position: relative;
+  list-style-type: none;
+  width: calc(100% - 6rem);
+  padding: 8px 0 8px 2.5rem;
+}
+main .content.about > div .luckyList .item ul li {
+  font-size: 1.125rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: #7F7366;
+}
+main .content.about > div .luckyList .item ul li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background: url("../image/ic_check.svg") no-repeat center center/contain;
+}
+main .content.about > div .luckyList .item:not(:nth-last-of-type(1)) h3:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: -5rem;
+  left: calc((4rem - 1px) / 2);
+  width: 1px;
+  z-index: -1;
+  background: #A8A8A8;
+}
+main .content.process > div h2 {
+  text-align: center;
+  color: #2B1700;
+}
+main .content.process > div img {
+  width: 100%;
+}
+main .content.process > div:nth-of-type(2) {
+  background: #FAF9F9;
+  margin: 2rem -3rem -3rem;
+  padding: 3rem;
+}
+main .content.process > div:nth-of-type(2) img {
+  width: 90%;
+  margin: 0 auto;
+}
+main .content.contact {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4rem;
+}
+main .content.contact > div {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5rem;
+}
+main .content.contact > div div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .content.contact > div div:nth-of-type(1) img {
+  width: 105px;
+}
+main .content.contact > div div:nth-of-type(1) p {
+  font-size: 0.75rem;
+  color: #80734E;
+  margin-top: 10px;
+}
+main .content.contact > div div:nth-of-type(2) {
+  margin-top: 2rem;
+}
+main .content.contact > div div:nth-of-type(2) h2, main .content.contact > div div:nth-of-type(2) p {
+  color: #80734E;
+}
+main .content.contact > div div:nth-of-type(2) h2 {
+  margin-bottom: 0.5rem;
+}
+main .content.contact > div div:nth-of-type(2) p {
+  font-size: 1.125rem;
+}
+main .content.contact .needs-validation {
+  width: 40%;
+}
+main .content.contact .needs-validation .half {
+  display: flex;
+}
+main .content.contact .needs-validation .half .field {
+  width: calc(50% - 10px);
+  margin: 0 5px;
+}
+main .content.contact .needs-validation .field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 5px;
+}
+main .content.contact .needs-validation .field label {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 1rem;
+  color: #7F7366;
+  letter-spacing: 1px;
+  background: #FFFFFF;
+  padding: 0 10px;
+}
+main .content.contact .needs-validation .field input, main .content.contact .needs-validation .field textarea {
+  max-width: 100%;
+  font-size: 1rem;
+  color: #2B1700;
+  border-radius: 4px;
+  border: 1px solid #7D7367;
+  padding: 15px 10px 10px;
+}
+main .content.contact .needs-validation .field input::-moz-placeholder, main .content.contact .needs-validation .field textarea::-moz-placeholder {
+  color: #A8A8A8;
+  letter-spacing: 1px;
+}
+main .content.contact .needs-validation .field input::placeholder, main .content.contact .needs-validation .field textarea::placeholder {
+  color: #A8A8A8;
+  letter-spacing: 1px;
+}
+main .content.contact .needs-validation .field textarea {
+  min-height: 90px;
+}
+main .content.contact .needs-validation .btnBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -10px;
+}
+main .content.contact .needs-validation .btnBox button {
+  cursor: pointer;
+  opacity: 1;
+  width: 100%;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 0 5px;
+  padding: 0.7rem;
+  transition: opacity, background, color, 0.3s;
+}
+main .content.contact .needs-validation .btnBox button:nth-of-type(1) {
+  border-color: #7F7366;
+  background: #7F7366;
+}
+main .content.contact .needs-validation .btnBox button:nth-of-type(2) {
+  border-color: #A27D56;
+  background: #A27D56;
+}
+main .content.contact .needs-validation .btnBox button:hover {
+  opacity: 0.7;
+}
+main .content.contact .needs-validation .btnBox button:active:nth-of-type(1) {
+  background: #FFFFFF;
+  color: #7F7366;
+}
+main .content.contact .needs-validation .btnBox button:active:nth-of-type(2) {
+  background: #FFFFFF;
+  color: #A27D56;
+}
+main .content.contact .invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #E00B0B;
+}
+main .content.contact .was-validated .form-control:invalid {
+  border-color: #E00B0B;
+}
+main .content.contact .was-validated .form-control:invalid ~ label {
+  color: #E00B0B;
+}
+main .content.contact .was-validated .form-control:invalid ~ .invalid-feedback {
+  display: block;
+}
+main .content.commodity {
+  padding: 2rem 0;
+}
+main .content.commodity h2 {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal,
+main .content.commodity .swiper-pagination-custom,
+main .content.commodity .swiper-pagination-fraction {
+  top: 0;
+  bottom: initial;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span,
+main .content.commodity .swiper-pagination-custom span,
+main .content.commodity .swiper-pagination-fraction span {
+  cursor: pointer;
+  opacity: 0.5;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-height: 45px;
+  position: relative;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  transition: opacity, 0.3s;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span.swiper-pagination-bullet-active,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span.swiper-pagination-bullet-active,
+main .content.commodity .swiper-pagination-custom span.swiper-pagination-bullet-active,
+main .content.commodity .swiper-pagination-fraction span.swiper-pagination-bullet-active {
+  opacity: 1;
+  font-weight: bold;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span.swiper-pagination-bullet-active:after,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span.swiper-pagination-bullet-active:after,
+main .content.commodity .swiper-pagination-custom span.swiper-pagination-bullet-active:after,
+main .content.commodity .swiper-pagination-fraction span.swiper-pagination-bullet-active:after {
+  width: 100%;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:after,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:after,
+main .content.commodity .swiper-pagination-custom span:after,
+main .content.commodity .swiper-pagination-fraction span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:hover,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:hover,
+main .content.commodity .swiper-pagination-custom span:hover,
+main .content.commodity .swiper-pagination-fraction span:hover {
+  opacity: 1;
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(1)::before {
+  content: "產品與服務";
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(2)::before {
+  content: "生產 & 檢驗設備";
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(3)::before {
+  content: "量測設備";
+}
+main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(4)::before {
+  content: "加工案例";
+}
+main .content.commodity .swiper-wrapper {
+  padding-top: 45px;
+}
+main .content.commodity .page1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 4rem;
+}
+main .content.commodity .page1 > div {
+  width: calc((100% - 9rem) / 3);
+  margin: 1.5rem;
+}
+main .content.commodity .page1 > div div {
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+main .content.commodity .page1 > div div span {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: lighter;
+}
+main .content.commodity .page1 > div div p {
+  font-size: 1.125rem;
+  margin-left: 1rem;
+}
+main .content.commodity .page1 > div img {
+  width: 100%;
+  border-radius: 10px;
+}
+main .content.commodity .page2 {
+  overflow: hidden;
+  padding: 2rem;
+}
+main .content.commodity .page2 .tableBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+main .content.commodity .page2 .tableBox table {
+  color: #FFFFFF;
+  margin: 0 1rem;
+}
+main .content.commodity .page2 .tableBox table .textRight {
+  text-align: left;
+}
+main .content.commodity .page2 .tableBox table td, main .content.commodity .page2 .tableBox table th {
+  text-align: center;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  border: 1px solid #FFFFFF;
+  padding: 5px 8px;
+}
+main .content.commodity .page2 .tableBox table th {
+  background: rgba(255, 255, 255, 0.2);
+}
+main .content.commodity .page2 .tableBox table:nth-of-type(1) {
+  width: 55%;
+  min-width: 450px;
+}
+main .content.commodity .page4 {
+  padding: 4rem 0;
+}
+main .content.commodity .page4 > div {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+main .content.commodity .page4 > div img {
+  width: calc((100% - 4rem) / 4);
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+main .content.commodity hr {
+  opacity: 0.3;
+  border-top: 0.5px solid #FFFFFF;
+  margin: 1rem 0 0;
+}
+main .content.commodity .bottomBlock {
+  padding: 2rem 5.5rem 0;
+}
+main .content.commodity .bottomBlock .title {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+main .content.commodity .bottomBlock .title span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+main .content.commodity .bottomBlock > span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+}
+main .content.commodity .bottomBlock > div {
+  display: flex;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+}
+main .content.commodity .bottomBlock > div div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  width: 25%;
+  padding: 0 1.5rem;
+}
+main .content.commodity .bottomBlock > div div p {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  background: #2B1700;
+  padding: 0 1rem;
+}
+main .content.commodity .bottomBlock > div div span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+main .content.commodity .bottomBlock > div div:not(:nth-last-of-type(1))::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2B1700;
+  padding: 3rem;
+}
+footer > img {
+  width: 35%;
+  min-width: 350px;
+}
+footer .textBlock {
+  max-width: 500px;
+  margin-left: 2rem;
+}
+footer .textBlock p, footer .textBlock span {
+  color: #FFFFFF;
+}
+footer .textBlock .title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+footer .textBlock .title p {
+  font-size: 1.625rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+footer .textBlock .title span {
+  opacity: 0.6;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+footer .textBlock .iconList {
+  display: flex;
+  align-items: flex-start;
+}
+footer .textBlock .iconList > div > div {
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  margin: 0.7rem 0;
+}
+footer .textBlock .iconList > div > div img {
+  width: 20px;
+  height: 20px;
+}
+footer .textBlock .iconList > div > div p {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin-left: 0.5rem;
+}
+footer::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  background: url("../image/line.png") no-repeat top left/cover;
+}
+
+@media all and (max-width: 1080px) {
+  header {
+    height: 80px;
+  }
+  header ul li {
+    height: 80px;
+  }
+  header ul li:hover::after, header ul li.focus::after {
+    height: 75px;
+  }
+  main {
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+  }
+  main .content.contact .needs-validation {
+    width: 50%;
+  }
+  main .content.commodity .page4 {
+    padding: 2rem;
+  }
+}
+@media all and (max-width: 920px) {
+  main .banner > div {
+    top: 35%;
+  }
+  main .content.contact > div {
+    margin-right: 3rem;
+  }
+  main .content.contact .needs-validation {
+    width: 65%;
+  }
+  main .content.commodity .page1 {
+    padding: 2rem;
+  }
+  main .content.commodity .page1 > div {
+    width: calc((100% - 6rem) / 3);
+    margin: 1rem;
+  }
+  main .content.commodity .page1 > div div span {
+    font-size: 3rem;
+  }
+  main .content.commodity .page1 > div div p {
+    font-size: 1rem;
+  }
+  main .content.commodity .bottomBlock {
+    padding: 2rem 2rem 0;
+  }
+  footer .textBlock .iconList {
+    flex-direction: column;
+  }
+  footer .textBlock .iconList > div > div {
+    margin: 0.7rem 0 0;
+  }
+}
+@media all and (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 0 2rem;
+  }
+  header ul li {
+    height: 70px;
+    font-size: 0.857rem;
+    padding: 1rem;
+  }
+  header ul li:hover::after, header ul li.focus::after {
+    height: 65px;
+  }
+  main {
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+  }
+  main .banner > div {
+    top: 37%;
+  }
+  main .content {
+    padding: 2rem;
+  }
+  main .content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  main .content.about > div .luckyList .item h3 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  main .content.about > div .luckyList .item h3 span {
+    font-size: 1.2rem;
+  }
+  main .content.about > div .luckyList .item p {
+    font-size: 1rem;
+  }
+  main .content.about > div .luckyList .item ul {
+    padding: 8px 0 8px 1.7rem;
+  }
+  main .content.about > div .luckyList .item ul li {
+    font-size: 1rem;
+  }
+  main .content.about > div .luckyList .item ul li::before {
+    width: 20px;
+    height: 26px;
+  }
+  main .content.process > div:nth-of-type(2) {
+    margin: 2rem -2rem -2rem;
+    padding: 2rem;
+  }
+  main .content.process > div:nth-of-type(2) img {
+    width: 100%;
+  }
+  main .content.contact {
+    flex-direction: column;
+  }
+  main .content.contact > div {
+    width: initial;
+    max-width: 400px;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+  main .content.contact > div div:nth-of-type(1) {
+    width: 15rem;
+  }
+  main .content.contact > div div:nth-of-type(2) {
+    margin: 0 0 0 2rem;
+  }
+  main .content.contact .needs-validation {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  main .content.commodity .page1 > div {
+    width: calc((100% - 4rem) / 2);
+  }
+  main .content.commodity .page2 .tableBox {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  main .content.commodity .page2 .tableBox table {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  main .content.commodity .page2 .tableBox table:nth-of-type(1) {
+    width: 100%;
+    min-width: initial;
+  }
+  main .content.commodity .page4 {
+    padding: 2rem;
+  }
+  main .content.commodity .page4 > div img {
+    width: calc((100% - 3rem) / 3);
+  }
+  main .content.commodity hr {
+    margin: 0;
+  }
+  main .content.commodity .bottomBlock > div {
+    flex-direction: column;
+    background: transparent;
+  }
+  main .content.commodity .bottomBlock > div div {
+    width: 100%;
+    padding: 0;
+  }
+  main .content.commodity .bottomBlock > div div:not(:nth-last-of-type(1)) {
+    margin-bottom: 1rem;
+  }
+  main .content.commodity .bottomBlock > div div:not(:nth-last-of-type(1))::after {
+    display: none;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer > img {
+    order: 2;
+    width: 100%;
+  }
+  footer .textBlock {
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+}
+@media all and (max-width: 600px) {
+  header {
+    padding: 0 0rem 0 1.5rem;
+  }
+  header img {
+    width: 40px;
+    height: 40px;
+  }
+  header button {
+    display: block;
+  }
+  header button.open + ul {
+    height: 3rem;
+  }
+  header ul {
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    height: 0;
+    background: #000000;
+    transition: height 0.5s;
+  }
+  header ul li {
+    height: initial;
+    line-height: 3rem;
+    padding: 0 1rem;
+  }
+  header ul li::after {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  header ul li:hover::after, header ul li.focus::after {
+    height: 3rem;
+  }
+  main .banner > img {
+    width: 130vw;
+  }
+  main .banner > div {
+    top: 35%;
+    justify-content: center;
+    right: initial;
+  }
+  main .banner > div img {
+    width: 50%;
+  }
+  main .banner > div::after {
+    width: 64%;
+    right: initial;
+  }
+  main .content {
+    padding: 1.5rem;
+  }
+  main .content h2 {
+    font-size: 1.3rem;
+  }
+  main .content.about > div .luckyList .item {
+    margin-bottom: 0.5rem;
+  }
+  main .content.about > div .luckyList .item:not(:nth-last-of-type(1)) h3:after {
+    bottom: -7.3rem;
+  }
+  main .content.about > div .luckyList .item h3 {
+    font-size: 1.3rem;
+  }
+  main .content.about > div .luckyList .item h3 span {
+    font-size: 1.05rem;
+  }
+  main .content.about > div .luckyList .item p {
+    font-size: 0.857rem;
+  }
+  main .content.about > div .luckyList .item ul {
+    padding: 8px 0 8px 1.3rem;
+  }
+  main .content.about > div .luckyList .item ul li {
+    font-size: 0.857rem;
+  }
+  main .content.about > div .luckyList .item ul li::before {
+    width: 16px;
+    height: 22px;
+  }
+  main .content.process > div:nth-of-type(2) {
+    margin: 2rem -1.5rem -1.5rem;
+    padding: 1.5rem;
+  }
+  main .content.contact > div div:nth-of-type(1) img {
+    width: 75px;
+  }
+  main .content.contact > div div:nth-of-type(1) p {
+    white-space: nowrap;
+  }
+  main .content.contact > div div:nth-of-type(2) {
+    margin: 0 0 0 1rem;
+  }
+  main .content.contact > div div:nth-of-type(2) p {
+    font-size: 1rem;
+  }
+  main .content.commodity .page1 > div {
+    width: calc(100% - 2rem);
+  }
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span,
+main .content.commodity .swiper-pagination-custom span,
+main .content.commodity .swiper-pagination-fraction span {
+    min-height: 40px;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+  main .content.commodity .page4 {
+    padding: 1rem;
+  }
+  main .content.commodity .page4 > div img {
+    width: calc((100% - 2rem) / 2);
+  }
+  footer > img {
+    min-width: initial;
+  }
+  footer .textBlock .title p {
+    font-size: 1.2rem;
+  }
+  footer .textBlock .title span {
+    font-size: 0.857rem;
+  }
+  footer .textBlock .iconList > div > div {
+    margin-top: 0.5rem;
+  }
+}
+@media all and (max-width: 500px) {
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(1)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(1)::before {
+    content: "產品/服務";
+  }
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(2)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(2)::before {
+    content: "生產/檢驗";
+  }
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(3)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(3)::before {
+    content: "量測";
+  }
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-custom span:nth-of-type(4)::before,
+main .content.commodity .swiper-pagination-fraction span:nth-of-type(4)::before {
+    content: "加工";
+  }
+}
+@media all and (max-width: 414px) {
+  header button.open span:nth-of-type(1) {
+    top: 0.8rem;
+  }
+  header button.open span:nth-of-type(3) {
+    bottom: 0.8rem;
+  }
+  main .content.commodity .swiper-horizontal > .swiper-pagination-bullets span,
+main .content.commodity .swiper-pagination-bullets.swiper-pagination-horizontal span,
+main .content.commodity .swiper-pagination-custom span,
+main .content.commodity .swiper-pagination-fraction span {
+    min-height: 35px;
+  }
+}

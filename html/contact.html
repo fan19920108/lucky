@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/common.js" defer></script>
+    <title>樂奇精密工業</title>
+</head>
+<body>
+    <header>
+        <img src="../image/logo.png" alt="樂奇精密工業">
+        <button class="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li onclick="location.href='index.html'">關於樂奇</li>
+            <li onclick="location.href='commodity.html'">主要產品</li>
+            <li onclick="location.href='process.html'">生產及核心製程</li>
+            <li class="focus">聯絡我們</li>
+        </ul>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="../image/banner.png" alt="樂奇精密工業">
+            <div>
+                <img src="../image/logoText.png" alt="logo">
+            </div>
+        </div>
+        <div class="content contact">
+            <div>
+                <div>
+                    <img src="../image/logo.png" alt="logo">
+                    <p>© 2023 樂奇精密加工</p>
+                </div>
+                <div>
+                    <h2>聯絡我們</h2>
+                    <p>請留下您的聯絡方式與想要諮詢的服務內容，讓我們聯繫您。</p>
+                </div>
+            </div>
+            <form class="needs-validation" novalidate>
+                <div class="half">
+                  <div class="field">
+                    <input type="text" class="form-control" id="company" placeholder="" value="" required>
+                    <label for="company">*公司名稱</label>
+                    <div class="invalid-feedback">Valid first name is required.</div>
+                  </div>
+                  <div class="field">
+                    <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                    <label for="name">*聯絡人名稱</label>
+                    <div class="invalid-feedback">Valid last name is required.</div>
+                  </div>
+                </div>
+    
+                <div class="field">
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                  <label for="email">*Email <span class="text-muted">(Optional)</span></label>
+                  <div class="invalid-feedback">Please enter a valid email address for shipping updates.</div>
+                </div>
+    
+                <div class="field">
+                  <input type="text" class="form-control" id="title" placeholder="" required>
+                  <label for="title">*您需要什麼服務</label>
+                  <div class="invalid-feedback">Please enter your shipping address.</div>
+                </div>
+    
+                <div class="field">
+                  <textarea type="text" class="form-control" id="detail" placeholder="請問您需要的服務是"></textarea>
+                  <label for="detail">詳細描述</label>
+                </div>
+                <div class="btnBox">
+                    <button onclick="location.href='index.html'">回首頁</button>
+                    <button class="" type="submit" onclick="">寄送</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <img src="../image/map.png" alt="地圖">
+        <div class="textBlock">
+            <div class="title">
+                <p>樂奇精密工業有限公司</p>
+                <span>樂奇精密工業創立於2015年，成立宗旨為提供優良之機械設計製作及加工製品與相關技術服務。</span>
+            </div>
+            <div class="iconList">
+                <div>
+                    <div>
+                        <img src="../image/ic_add.svg" alt="地址">
+                        <p>地址：新竹市中華路六段230號</p>
+                    </div>
+                    <div>
+                        <img src="../image/ic_id.svg" alt="統編">
+                        <p>統編：42750715</p>
+                    </div>
+                    <div>
+                        <img src="../image/ic_people.svg" alt="聯絡人">
+                        <p>聯絡人：鄭明洲</p>
+                    </div>
+                    <div>
+                        <img src="../image/ic_mail.svg" alt="信箱">
+                        <p>信箱：allone1688@yahoo.com.tw</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="../image/ic_phone.svg" alt="TEX">
+                        <p>TEX：03-518-3173</p>
+                    </div>
+                    <div>
+                        <img src="../image/ic_fax.svg" alt="FAX">
+                        <p>FAX：03-518-3175</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }else{
+                var company = document.getElementById('company').value;
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var title = document.getElementById("title").value;
+                var detail = document.getElementById("detail").value; 
+                sendEmail(company,name,email,title,detail);
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+
+        }, false);
+
+      })();
+
+      function  sendEmail (company,name,email,title,detail) {
+            event.preventDefault();
+            emailjs.init("-m237B7hZY_9kIiGf");
+            var template_params = {
+              company : company,
+              name : name,
+              email : email,
+              title : title,
+              detail : detail
+            };
+            var template_id = "template_egknnp8";
+            var service_id = "service_652o6q7";
+            
+            emailjs.send(service_id, template_id, template_params).then( result => { 
+              console.log(result.text); 
+              alert("謝謝您，我們收到您的回覆了！")
+              history.go(-1);
+            }, error => { 
+              alert(error.text);
+              alert("系統錯誤請稍後再試")
+             } )}
+    </script>
+</body>
+</html>
