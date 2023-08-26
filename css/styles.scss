@@ -588,6 +588,23 @@ footer {
     }
 }
 
+// slider套件樣式整理
+.slider {
+    width: 50%;
+    margin: 100px auto;
+}
+.slick {
+    &-slide {
+        transition: all ease-in-out .3s;
+        opacity: .2;
+        margin: 0px 20px;
+        img { width: 100%; }
+    }
+    &-active { opacity: .5; }
+    &-current { opacity: 1; }
+    &-prev:before, &-next:before { color: $ColorBlack; }
+}
+
 @media all and (max-width: 1080px) {
     header {
         height: 80px;

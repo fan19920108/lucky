@@ -790,6 +790,29 @@ footer::before {
   background: url("../image/line.png") no-repeat top left/cover;
 }
 
+.slider {
+  width: 50%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  transition: all ease-in-out 0.3s;
+  opacity: 0.2;
+  margin: 0px 20px;
+}
+.slick-slide img {
+  width: 100%;
+}
+.slick-active {
+  opacity: 0.5;
+}
+.slick-current {
+  opacity: 1;
+}
+.slick-prev:before, .slick-next:before {
+  color: #000000;
+}
+
 @media all and (max-width: 1080px) {
   header {
     height: 80px;
