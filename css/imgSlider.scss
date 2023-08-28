@@ -84,6 +84,7 @@
 }
 @media screen and (max-width: 375px) {
   .imgSlider img {
+    width: auto;
     height: 180px !important;
   }
 }

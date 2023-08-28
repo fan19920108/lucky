@@ -801,7 +801,7 @@ footer::before {
   margin: 0px 20px;
 }
 .slick-slide img {
-  width: 100%;
+  width: auto;
 }
 .slick-active {
   opacity: 0.5;

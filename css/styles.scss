@@ -598,7 +598,7 @@ footer {
         transition: all ease-in-out .3s;
         opacity: .2;
         margin: 0px 20px;
-        img { width: 100%; }
+        img { width: auto; }
     }
     &-active { opacity: .5; }
     &-current { opacity: 1; }
